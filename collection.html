@@ -22,48 +22,178 @@
 
 <body> 
 
+    
+      <style>
+body {
+  background-image: url('https://i.pinimg.com/736x/54/c6/da/54c6dae85b6694ffc4abc187d801ecf0.jpg');
+}
+</style>
+
+
+
     <header> 
 
         <h1>The Sartorial Exprtise </h1>
 
-        <nav>
-
-              <a href="index.html">Home</a> | 
-
-            <a href="about.html">About</a> | 
-
-            <a href="contact.html">Contact</a> 
-
-            <a href="collection.html">Collection</a>
-
-            <a href="login.html">Login</a>
-
-             <a href="how it works.html">How It Works</a>
-
-
-
-
-
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">My Website</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="collection.html">Collection</a>  
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a> 
+                        </li>
+                        <li class="nav-item">   
+                            <a class="nav-link" href="how it works.html">How It Works</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+    
 
+    
     </header> 
 
  
+<main>
+  <div class="container mt-5">
+    <div class="row" id="product-list"></div>
 
-    <main> 
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-secondary me-2" onclick="prevPage()">Prev</button>
+      <button class="btn btn-primary" onclick="nextPage()">Next</button>
+    </div>
+  </div>
+</main>
 
-          <img src="C:\Users\Eric\OneDrive - Botswana Accountancy College\Documents\Pictures\Camera Roll\Mens black velvet & ivory three piece suit _ Custom tailored wedding outfit.jpg" alt="Sartorial Expertise" class="img-fluid">
-          <img src="https://gentux.imgix.net/1643215828_GenerationTuxBlackNotchLapelTuxedoThreeQuatersShot.jpg?auto=format&fit=crop&w=480&ar=5:7&cs=origin&dpr=1" alt="Sartorial Expertise" class="img-fluid">
+<script>
+const products = [
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/96/0a/67/960a674ae51b5973c31506bdabd35f21.jpg" },
+  { name: "Black Tuxedo", price: 120, img: "https://gentux.imgix.net/1643215828_GenerationTuxBlackNotchLapelTuxedoThreeQuatersShot.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/c8/81/ec/c881ec2f1a03a800b019547aeda9db98.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/9d/b4/90/9db490e701c7e34ec8d33996e2953e56.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/7c/66/ce/7c66ce24f4d9d2ec067d5ad50ad2217f.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/6e/d2/d0/6ed2d02a62076a05751f4c6cfc90b656.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/91/49/90/914990985678123a6c2af593303cf165.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/e2/db/e2/e2dbe27b8c75873a90ad92976058fef3.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/12/5f/8c/125f8c61143497c806bd889d1c3cfccc.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/7f/16/eb/7f16eb9f676e07ce912538897de7f6ce.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/bd/d1/18/bdd118d5cb2eaded22dbd7079f2833c1.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/d2/ba/0b/d2ba0bae2ad414f0645af1511d2373c7.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/72/82/74/7282740ca8a00a51d733a773f3abe565.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/a9/b8/3c/a9b83c8cf35d2b04fca0d36f35f59f70.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/ca/59/b2/ca59b2b326647f3054dad1689890a3a8.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/34/e7/00/34e70016d1c17340edb94e968e979298.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/a4/d2/f7/a4d2f76752d39035b77cae30566835a1.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/45/a5/1e/45a51efed7666976a123945cdc746560.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/3b/bf/7e/3bbf7efc4b665e4a381160d1d3da734a.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/31/c9/a2/31c9a281319512b1d8dd815abec2a6e2.jpg" }, 
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/c9/16/7c/c9167c9a1554d200e6270dc91fa16ead.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/24/3d/34/243d34039843335850a94519de565970.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/62/d1/6c/62d16c449d42d8ac65742ae652a7a5a4.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/82/08/1e/82081eb67f42d3adfd01a24065bd8987.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/29/0f/07/290f0733b3a88cd91bf950f5a4cfb90c.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/8b/03/34/8b033458bb0f603099fd628a6fd96dd2.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/b5/ce/bd/b5cebd4093e2340c41d0c172bae5bacf.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/73/d7/25/73d72540a8031428022a2d96d0ac36aa.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/73/d7/25/73d72540a8031428022a2d96d0ac36aa.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/09/d2/24/09d224f10ded01e95fa7447933b76ecb.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/61/41/27/614127d674a39836d933643d963323e0.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/a9/67/ad/a967ad05837085667b14af842c7527b5.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/72/d0/70/72d070f19d6e8606c38aeda0c5a6155e.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/63/27/f3/6327f3f13c4dce6a632f139ccb181889.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/15/3f/4e/153f4ef5f49dd170cddc85814b5f5fc7.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/05/a9/55/05a9555cc07c092b81357b11c3fbc101.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/43/16/34/4316347ec11cc66cfc419ce3c3578abe.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/32/7a/5f/327a5faa8f721872a5ef56bf78f6afc5.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/25/bc/1c/25bc1cc7363976ef5f022de5982ff210.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/2e/6e/44/2e6e44f875326588a882e649fd82e6e2.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/d6/e0/9d/d6e09d9e54994fc0ec67996d168df3bc.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/3c/50/6e/3c506e2f032531451562a7b07dcd5829.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/87/a6/c6/87a6c6cbc9519aee5dd7cdae4180c328.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/fc/81/a3/fc81a3d24963bd1349f52ba5b72562ca.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/1200x/7f/bb/3a/7fbb3aca994b12accef59281781f838f.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/cf/46/08/cf4608cc3cfa9b8dd6a9a696393af0b5.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/b3/67/83/b3678367d606d5d12747f6ba1b0f7b82.jpg" },
+  { name: "Classic Suit", price: 120, img: "https://i.pinimg.com/736x/d4/7d/0e/d47d0ef3aeec60e05a20a33dbfffe053.jpg" },
+  { name: "Classic Suit", price: 120, img: "" },
+  
+];
 
+let currentPage = 1;
+const itemsPerPage = 16;
 
-    </main>
+function displayProducts() {
+  const productList = document.getElementById("product-list");
+  productList.innerHTML = "";
 
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
 
-    <footer> 
+  const pageItems = products.slice(start, end);
 
-        <p>&copy; 2026 The Sartorial Expertise</p>
-        
-    </footer>
+  pageItems.forEach((product, index) => {
+    productList.innerHTML += `
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="${product.img}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">$${product.price}</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(${start + index})">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function nextPage() {
+  if (currentPage * itemsPerPage < products.length) {
+    currentPage++;
+    displayProducts();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    displayProducts();
+  }
+}
+
+// Cart logic (same as before)
+function addToCart(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(products[index]);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart");
+}
+
+// Load first page
+displayProducts();
+</script>
+
+    
 
         <!-- Bootstrap JS and dependencies -->  
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>  
