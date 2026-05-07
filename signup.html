@@ -1,15 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Animated Login Form using HTML CSS</title>
-    <link rel="stylesheet" href="login.html">
-
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
 
   <style>
 
@@ -39,7 +34,7 @@
       padding:20px;
     }
 
-    .login-box{
+    .signup-box{
       width:400px;
       padding:40px;
       border-radius:15px;
@@ -53,7 +48,7 @@
       color:white;
     }
 
-    .login-box h2{
+    .signup-box h2{
       text-align:center;
       margin-bottom:30px;
       font-size:32px;
@@ -108,19 +103,19 @@
       background:rgba(255,255,255,0.35);
     }
 
-    .register-link{
+    .login-link{
       text-align:center;
       margin-top:20px;
       font-size:14px;
     }
 
-    .register-link a{
+    .login-link a{
       color:white;
       text-decoration:none;
       font-weight:bold;
     }
 
-    .register-link a:hover{
+    .login-link a:hover{
       text-decoration:underline;
     }
 
@@ -131,30 +126,35 @@
 
   <div class="container">
 
-    <div class="login-box">
+    <div class="signup-box">
 
-      <h2>Login</h2>
+      <h2>Sign Up</h2>
 
-      <form id="loginForm">
+      <form id="signupForm">
 
         <div class="input-box">
-          <input type="text" id="loginUsername" required>
+          <input type="text" id="signupUsername" required>
           <label>Username</label>
         </div>
 
         <div class="input-box">
-          <input type="password" id="loginPassword" required>
+          <input type="email" id="signupEmail" required>
+          <label>Email</label>
+        </div>
+
+        <div class="input-box">
+          <input type="password" id="signupPassword" required>
           <label>Password</label>
         </div>
 
         <button type="submit" class="btn">
-          Login
+          Create Account
         </button>
 
-        <div class="register-link">
+        <div class="login-link">
           <p>
-            Don't have an account?
-            <a href="signup.html">Register</a>
+            Already have an account?
+            <a href="login.html">Login</a>
           </p>
         </div>
 
@@ -166,26 +166,21 @@
 
 <script>
 
-  document.getElementById("loginForm").addEventListener("submit", function(e){
+  document.getElementById("signupForm").addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    let username = document.getElementById("loginUsername").value;
-    let password = document.getElementById("loginPassword").value;
+    let username = document.getElementById("signupUsername").value;
+    let email = document.getElementById("signupEmail").value;
+    let password = document.getElementById("signupPassword").value;
 
-    let storedUsername = localStorage.getItem("username");
-    let storedPassword = localStorage.getItem("password");
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
 
-    if(username === storedUsername && password === storedPassword){
+    alert("Account Created Successfully!");
 
-      alert("Login Successful!");
-      window.location.href = "index.html";
-
-    }else{
-
-      alert("Incorrect Username or Password");
-
-    }
+    window.location.href = "index.html";
 
   });
 

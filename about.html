@@ -22,6 +22,14 @@
 
 <body>
 
+       
+      <style>
+body {
+  background-image: url('https://i.pinimg.com/736x/54/c6/da/54c6dae85b6694ffc4abc187d801ecf0.jpg');
+}
+</style>
+
+
 
     
      
@@ -66,43 +74,89 @@
     
 <main>
 
-  <p>
-    Hi! Here at <strong>The Sartorial Expertise</strong>, we are devoted to providing you 
-    with the finest suits and formal attire designed to help you stand out with confidence 
-    . Our collections blend timeless elegance with modern style, ensuring 
-    that every piece reflects exceptional quality, precision, and attention to detail.
-  </p>
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
 
-  <p>
-    <strong>Our Mission:</strong>  
-    Our mission is to redefine the formalwear experience by making premium fashion accessible, 
-    inspiring confidence in every individual, and delivering excellence through both our 
-    products and customer service. We believe that the right attire has the power to transform 
-    not only appearance, but also self-expression and presence.
-  </p>
+  .box {
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    min-height: 250px;
+  }
 
-  <p>
-    <strong>Our Objectives:</strong>  
-    We aim to offer a carefully tailored selection of high-quality garments that meet the diverse 
-    needs of our customers. By staying competent and relevant to evolving fashion trends while preserving 
-    classic styles, we ensure that our collections remain relevant and versatile. We are also 
-    committed to providing a seamless and enjoyable shopping experience through user-friendly 
-    design, secure transactions, and responsive support.
-  </p>
+  .box h2 {
+    margin-bottom: 15px;
+    color: #222;
+  }
 
-  <p>
-    <strong>Our Goals:</strong>  
-    Our goal is to become a trusted destination for formalwear, known for reliability, style, 
-    and customer satisfaction. We strive to build lasting relationships with our customers by 
-    consistently exceeding expectations, expanding our collections, and maintaining the highest 
-    standards in both quality and service. Ultimately, we seek to empower individuals to express 
-    their identity with confidence and elegance.
-  </p>
+  .box p {
+    color: #555;
+    line-height: 1.6;
+  }
 
-  <p>
-    This is my first multi-page website, and I'm excited to share it with you!
-  </p>
 
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  min-height: 250px;
+}
+</style>
+
+<div class="grid-container">
+
+  <div class="box">
+    <h2>About Us</h2>
+    <p>
+      Here at <strong>The Sartorial Expertise</strong>, we are devoted to providing you
+      with the finest suits and formal attire designed to help you stand out with confidence.
+      Our collections blend timeless elegance with modern style.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to redefine the formalwear experience by making premium fashion accessible,
+      inspiring confidence in every individual, and delivering excellence through our products
+      and customer service.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Our Objectives</h2>
+    <p>
+      We aim to offer a carefully tailored selection of high-quality garments while staying
+      aligned with evolving fashion trends and preserving timeless styles.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Our Goals</h2>
+    <p>
+      Our goal is to become a trusted destination for formalwear, known for reliability,
+      elegance, and customer satisfaction while empowering individuals to express confidence.
+    </p>
+  </div>
+
+</div>
 </main>
  
 
